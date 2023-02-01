@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InputController : MonoBehaviour
-{
-
-    [SerializeField] ShipControl shipControl;
+{   
     public float _xInput;
     public float _yInput;
     

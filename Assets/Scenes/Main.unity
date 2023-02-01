@@ -811,9 +811,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1298898652}
   bulletPrefab: {fileID: 5832711818881773197, guid: ccabb2ffb9e82c641af58b234f16260e, type: 3}
+  inputController: {fileID: 2045961832}
   speed: 50
   xLimit: 7
-  reloadTime: 0.5
+  reloadTime: 0.6
 --- !u!1 &1558891755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1078,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debf0038bf3ea76459a84a2944a658fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipControl: {fileID: 1480750909}
+  _xInput: 0
+  _yInput: 0
 --- !u!4 &2045961833
 Transform:
   m_ObjectHideFlags: 0

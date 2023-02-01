@@ -11,9 +11,9 @@ public class ShipControl : MonoBehaviour
     //public GameObject bulletPrefab4;
     
     [SerializeField] private InputController inputController;    
-    [SerializeField] float speed = 50f;
-    float xLimit = 7f;
-    float reloadTime = 0.6f;
+    public float speed = 50f;
+    public float xLimit = 7f;
+    public float reloadTime = 0.6f;
     float _elapsedTime = 0f;
 
 
