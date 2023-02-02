@@ -14,6 +14,17 @@ public class GameManager : MonoBehaviour
     //public float timeToBlaster = 10;
 
 
+    private void Update()
+    {
+        //wy³¹czenie kursora
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        //if (playerScore >= 10)
+        //    {
+        //       Blaster();
+        //    }
+    }
+
     public void AddScore()
     {
         playerScore++;
@@ -29,13 +40,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    //private void Update()
-    //{
-    //   if (playerScore >= 10)
-    //    {
-    //       Blaster();
-    //    }
-    //}
 
 
     //public void Blaster()
