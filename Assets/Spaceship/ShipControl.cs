@@ -26,7 +26,7 @@ public class ShipControl : MonoBehaviour
         //monitorowanie czasu dla wystrzelenia pocisku
         _elapsedTime += Time.deltaTime;        
 
-        transform.Translate(inputController._xInput * speed * Time.deltaTime, inputController._yInput * speed * Time.deltaTime, 0f);
+        transform.Translate(inputController.XInput * speed * Time.deltaTime, inputController.YInput * speed * Time.deltaTime, 0f);
 
         // ograniczenie po³o¿enia statku na osi X i Y
         Vector3 position = transform.position;
@@ -34,7 +34,7 @@ public class ShipControl : MonoBehaviour
         position.y = Mathf.Clamp(position.y, -6f, -1f);
         transform.position = position;
                 
-        if (Input.GetButtonDown("Fire1") && _elapsedTime > reloadTime)
+        if (inputController.Fire1 && _elapsedTime > reloadTime)
         {
             //utworzenie egzemplarza pocisku w odleg³ 1.2 od gracza
             Vector3 spawnPos = transform.position;
