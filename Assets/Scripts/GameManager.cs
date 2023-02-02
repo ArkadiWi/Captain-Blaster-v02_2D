@@ -33,8 +33,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void PlayerDied()
-    {
-        //gameOverText.enabled = true;
+    {       
         gameOverText.gameObject.SetActive(true);
         //zatrzymanie gry
         Time.timeScale = 0;
