@@ -25,8 +25,8 @@ public class ShipControl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(other.gameObject);
-        Destroy(this.gameObject);
         gameManager.PlayerDied();
+        Destroy(this.gameObject);
     }
 
 }

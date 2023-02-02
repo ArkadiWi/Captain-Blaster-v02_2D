@@ -216,6 +216,7 @@ RectTransform:
   m_Children:
   - {fileID: 1900980861}
   - {fileID: 1444869036}
+  - {fileID: 924697021}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -412,6 +413,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1f227ba691a6c47b61da7149ced2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &924697018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924697021}
+  - component: {fileID: 924697020}
+  - component: {fileID: 924697019}
+  m_Layer: 5
+  m_Name: Blaster Time
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &924697019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924697018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6085038, g: 0.049172327, b: 0.8018868, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &924697020
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924697018}
+  m_CullTransparentMesh: 1
+--- !u!224 &924697021
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924697018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 86266704}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -151.38779, y: -15}
+  m_SizeDelta: {x: 302.7756, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1298898651
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +523,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 1444869037}
   scoreText: {fileID: 1900980862}
+  blasterTimeText: {fileID: 924697019}
+  blasterPossibility: 0
   playerScore: 0
+  timeToBlaster: 10
 --- !u!4 &1298898653
 Transform:
   m_ObjectHideFlags: 0
@@ -452,7 +535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298898651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1156335, y: 46.687084, z: -3.5018728}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -810,11 +893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1298898652}
-  bulletPrefab: {fileID: 5832711818881773197, guid: ccabb2ffb9e82c641af58b234f16260e, type: 3}
   inputController: {fileID: 2045961832}
   speed: 50
   xLimit: 7
-  reloadTime: 0.6
 --- !u!1 &1558891755
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,9 +1080,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03f1c315e1d6e448be16d5658ff712b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1298898652}
   inputController: {fileID: 2045961832}
+  spaceShip: {fileID: 1480750904}
   bulletPrefab: {fileID: 5832711818881773197, guid: ccabb2ffb9e82c641af58b234f16260e, type: 3}
-  reloadTime: 0.6
+  bulletPrefab1: {fileID: 4323254130301760657, guid: 9b0282319dfa58145afe35bd8b1ba69d, type: 3}
+  bulletPrefab2: {fileID: 4323254130301760657, guid: 325885ee55532cd47ac2b292e334ae6e, type: 3}
+  bulletPrefab3: {fileID: 4323254130301760657, guid: eb63968d31d8a2b4e8d377a3c99733c4, type: 3}
+  bulletPrefab4: {fileID: 4323254130301760657, guid: f948c4d1feb5a964aa026d93c0c2b52f, type: 3}
 --- !u!4 &1770490991
 Transform:
   m_ObjectHideFlags: 0
